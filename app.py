@@ -4,7 +4,7 @@ from urllib.request import urlopen
 
 def send_mail(receiver_mail, url):
     configuration = sib_api_v3_sdk.Configuration()
-    configuration.api_key['api-key'] = config.api_key
+    configuration.api_key['api-key'] = st.secrets["api_key"]
 
     api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 
