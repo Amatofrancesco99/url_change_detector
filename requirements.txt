@@ -1,0 +1,4 @@
+streamlit==1.15.2
+async-timeout==4.0.2
+sib-api-v3-sdk==7.5.0
+urllib3==1.26.7
