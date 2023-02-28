@@ -1,18 +1,18 @@
-import streamlit as st, time, hashlib, sib_api_v3_sdk
+import streamlit as st, time, hashlib, sib_api_v3_sdk, config
 from sib_api_v3_sdk.rest import ApiException
 from urllib.request import urlopen
 
 def send_mail(receiver_mail, url):
     configuration = sib_api_v3_sdk.Configuration()
-    configuration.api_key['api-key'] = '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'
+    configuration.api_key['api-key'] = config.api_key
 
     api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 
     send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
         to=[sib_api_v3_sdk.SendSmtpEmailTo(email=receiver_mail)],
         sender=sib_api_v3_sdk.SendSmtpEmailSender(email='urlChangeDetector@gmail.com', name='URL Change Detector'),
-        html_content='<html><body><p>Hi '+ receiver_mail.split("@", 1)[0] + ',<br><br>The following mail to inform you that the URL '+ url+ ' has been updated.<br><br>Hope you liked this service, <br>See you soon. </p></body></html>',
-        subject= 'URL updated'
+        html_content='<html><body><p>Hi '+ receiver_mail.split("@", 1)[0] + ',<br><br>The following mail to inform you that the URL '+ url+ ' has been updated.<br><br>Hope you find this service useful, <br>See you soon. </p></body></html>',
+        subject = 'Job active on ' + url.split("/", 2)[2].replace("www.", "") + ' - New update'
     )
 
     try:
