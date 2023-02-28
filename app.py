@@ -1,4 +1,4 @@
-import streamlit as st, time, hashlib, sib_api_v3_sdk, config
+import streamlit as st, time, hashlib, sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
 from urllib.request import urlopen
 
