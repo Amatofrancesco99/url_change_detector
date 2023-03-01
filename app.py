@@ -56,7 +56,7 @@ with st.sidebar:
     st.write("The URL Change Detector web-app has been purposely created in order to get notified once an URL has been updated.\n"
              "The mail is not mandatory, but you can insert it to get also notified with a mail (our mail plan has a *maximum of 300 mails per day* that can be sent, so"
              " some problem may occur if the users exeed this maximum).\n\n"
-             "*Why you should use this service?*\nIs **simpler, and requires less configuration time with respect to all the other websites** you can find on the internet that do the"
+             "*Why you should use this service?*\nIs **simpler, and requires less configuration time with respect to all the other websites** you can find on the web that do the"
              " same. The only disadvantage is that you have to maintain opened this page (otherwise no notification will be sent).")
     st.subheader("Author")
     st.write("If you want to get further details on the author, you can have a look [here](https://amatofrancesco.altervista.org).\n\n"
