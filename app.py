@@ -11,7 +11,7 @@ def send_mail(receiver_mail, url):
     send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
         to=[sib_api_v3_sdk.SendSmtpEmailTo(email=receiver_mail)],
         sender=sib_api_v3_sdk.SendSmtpEmailSender(email='urlChangeDetector@gmail.com', name='URL Change Detector'),
-        html_content='<html><body><p>Hi '+ receiver_mail.split("@", 1)[0] + ',<br><br>The following mail to inform you that the URL '+ url+ ' has been updated.<br><br>Hope you find this service useful, <br>See you soon. </p></body></html>',
+        html_content='<html><body><p>Hi '+ receiver_mail.split("@", 1)[0] + ',<br><br>The following mail to inform you that the content of the URL '+ url+ ' has been updated.<br><br>Hope you find this service useful, <br>See you soon. </p></body></html>',
         subject = 'Job active on ' + url.split("/", 2)[2].replace("www.", "") + ' - New update'
     )
 
@@ -35,7 +35,7 @@ def url_change_detector(url, seconds, mail):
                 if newHash == currentHash: # check if new hash is same as the previous hash
                     continue            
                 else: # if something changed in the hashes
-                    st.success('URL updated', icon="🦜")
+                    st.success('URL content updated', icon="🦜")
                     st.snow()
                     if (mail != ""):
                         send_mail(mail, url)
@@ -53,7 +53,7 @@ st.title(apptitle + ' 🦦')
 
 with st.sidebar:
     st.subheader("About")
-    st.write("The URL Change Detector web-app has been purposely created in order to get notified once an URL has been updated.\n"
+    st.write("The URL Change Detector web-app has been purposely created in order to get notified once an URL content has been updated.\n"
              "The mail is not mandatory, but you can insert it to get also notified with a mail (our mail plan has a *maximum of 300 mails per day* that can be sent, so"
              " some problem may occur if the users exeed this maximum).\n\n"
              "*Why you should use this service?*\nIs **simpler, and requires less configuration time with respect to all the other websites** you can find on the web that do the"
