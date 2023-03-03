@@ -53,7 +53,7 @@ st.title(apptitle + ' 🦦')
 
 with st.sidebar:
     st.subheader(":green[About]")
-    st.write("The URL Change Detector web-app has been purposely created in order to get notified once an URL content has been updated.\n"
+    st.write("The URL Change Detector web-app has been purposely created in order to :blue[get notified once an URL content has been updated].\n"
              "The mail is not mandatory, but you can insert it to get also notified with a mail (our mail plan has a *maximum of 300 mails per day* that can be sent, so"
              " some problem may occur if the users exeed this maximum).\n\n"
              "*Why you should use this service?*\nIs **simpler, and requires less configuration time with respect to all the other websites** you can find on the web that do the"
